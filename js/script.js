@@ -58,13 +58,18 @@ const quotes = [
  * `getRandomQuote` function
 ***/
 
-
+function getRandomQuote() {
+  const randomNum = Math.floor(Math.random() * quotes.length) + 1;
+  return quotes[randomNum]
+}
 
 /***
  * `printQuote` function
 ***/
 
-
+function printQuote () {
+  
+}
 
 /***
  * click event listener for the print quote button
