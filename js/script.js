@@ -59,7 +59,7 @@ const quotes = [
 ***/
 
 function getRandomQuote() {
-  const randomNum = Math.floor(Math.random() * quotes.length) + 1;
+  const randomNum = Math.floor(Math.random() * quotes.length);
   return quotes[randomNum]
 }
 
@@ -68,8 +68,15 @@ function getRandomQuote() {
 ***/
 
 function printQuote () {
-  
+  let quoteObject = getRandomQuote();
+  let myQuoteString = `<p class="quote"> ${quoteObject.quote} </p>
+                      <p class="source"> ${quoteObject.source} </p>`;
+  document.getElementById('quote-box').innerHTML = myQuoteString;
+  return
 }
+
+let statString = document.querySelector('#stat-string');
+
 
 /***
  * click event listener for the print quote button
