@@ -25,32 +25,41 @@ const quotes = [
     source : "Abraham Lincoln" 
   },
   {
-    quote : "Life is not measured by the number of reaths we take, but by the moments that take our breath away",
+    quote : "Life is not measured by the number of breaths we take, but by the moments that take our breath away",
     source : "Maya Angelou"
   },
   {
-    quote : "The path to success is to take massive determined action.",
-    source : "Tony Robbins"
+    quote : "She will not be able to resist these pearls.",
+    source : "Dustin Henderson",
+    year: 2017,
+    citation: "Stranger Things, Stranger Things Season 2: Chapter One"
+
   },
   {
-    quote : "A strong positive self-image is the best possible preparation for success.",
-    source : "Dr. Joyce Brothers"
+    quote : "People say you should have something to fall back on, but if I'm falling, I want to fall forward, not prepare to fall back.",
+    source : "Denzel Washington",
+    year: 2008,
+    citation: "Oprah's interview with Denzel Washington."
   },
   {
-    quote : "There are no traffic jams along the extra mile.",
-    source : "Roger Stauback"
+    quote : "You know nothing, Jon Snow.",
+    source : "Ygritte",
+    citation: "Game of Thrones"
   },
   {
     quote : "I attribute my success to this: I never took nor gave any excuses.",
     source : "Florence Nightingale"
   },
   {
-    quote : "It is never too late to be what you might have been.",
-    source : "George Eliot"
+    quote : "He who would accomplish little need sacrifice little; he who would achieve much must sacrifice much. He who would attain highly must sacrifice greatly",
+    source : "James Allen",
+    Year: 1903,
+    citation: "As a Man Thinketh"
   },
   {
-    quote : "It is not the strongest species that survive, nor the most intelligent, but the most responsive to change.",
-    source : "Charles Darwin"
+    quote : "Mr. Gorbachev, tear down this wall.",
+    source : "Ronald Regan",
+    year: 1987
   }
 ]
 
@@ -70,12 +79,19 @@ function getRandomQuote() {
 function printQuote () {
   let quoteObject = getRandomQuote();
   let myQuoteString = `<p class="quote"> ${quoteObject.quote} </p>
-                      <p class="source"> ${quoteObject.source} </p>`;
+                        <p class="source"> ${quoteObject.source}`;
+
+  if (quoteObject.citation) {
+    myQuoteString += `<span class="citation">${quoteObject.citation}</span>`
+  }
+  if (quoteObject.year) {
+    myQuoteString += `<span class="year">${quoteObject.year}</span>`
+  }                    
+   myQuoteString += "</p>"
   document.getElementById('quote-box').innerHTML = myQuoteString;
   return
 }
 
-let statString = document.querySelector('#stat-string');
 
 
 /***
