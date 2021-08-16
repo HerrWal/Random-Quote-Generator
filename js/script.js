@@ -83,7 +83,9 @@ function getRandomQuote() {
 
 function randomBackground() {
 	let color = '#'; //Hash character and then...
-	color += Math.random().toString(16).slice(2, 8); // ...we add a formula to the variable (I had to look this up online)
+	color += Math.random().toString(16).slice(2, 8); // ...we add a formula to the variable (I had to look this up online, link below)
+	// https://stackoverflow.com/questions/47906161/math-random-tostring-slice-is-not-a-function-in-javascript#47906193
+	// Answer #2, dont even know how I got there. 
 	return color
 };
 
@@ -99,7 +101,7 @@ function printQuote() {
   //The following is the variable to turn the quote objects into the string of HTML code
 	let myQuoteString = `<p class="quote"> ${quoteObject.quote} </p>
                         <p class="source"> ${quoteObject.source}`;
-  // Below is evaluated wether the object has additional properties and if they have to add them to the string
+  // Below is evaluated wether the object has additional properties and if they have, to add them to the string
 	if (quoteObject.citation) {
 		myQuoteString += `<span class="citation">${quoteObject.citation}</span>`
 	};
