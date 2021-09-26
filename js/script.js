@@ -74,7 +74,7 @@ project 1 - A Random Quote Generator
 function getRandomQuote() {
 	const randomNum = Math.floor(Math.random() * quotes.length); //This variable contains the result of the random number formula
 	return quotes[randomNum] // And the function here will return the element at the index value of the randomNum
-};
+}
 
 
 /***
@@ -87,7 +87,7 @@ function randomBackground() {
 	// https://stackoverflow.com/questions/47906161/math-random-tostring-slice-is-not-a-function-in-javascript#47906193
 	// Answer #2, dont even know how I got there. 
 	return color
-};
+}
 
 
 /***
@@ -116,7 +116,7 @@ function printQuote() {
 	document.getElementById('quote-box').innerHTML = myQuoteString;
 	document.querySelector('body').style.backgroundColor = bgColor;
 	return //return the data
-};
+}
 
 /***
  * This function will change the quote every 10 seconds
